@@ -50,6 +50,14 @@ passport.serializeUser((user, done) => {
       res.redirect('/'); // Redirect to your React app's homepage after successful login
     }
   );
+
+
+  app.get('/profile', (req, res) => {
+    if(!req.isAuthenticated()) {
+      return res.status(401).send({ error: 'Unauthorized access!!!'})
+    }
+    res.send("Profile")
+  })
   
   app.get('/logout', (req, res) => {
     req.logout();
