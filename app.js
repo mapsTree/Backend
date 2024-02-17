@@ -56,6 +56,7 @@ passport.serializeUser((user, done) => {
     if(!req.isAuthenticated()) {
       return res.status(401).send({ error: 'Unauthorized access!!!'})
     }
+    console.log(req)
     res.send("Profile")
   })
   
@@ -65,6 +66,7 @@ passport.serializeUser((user, done) => {
   });
   
   app.get('/user', (req, res) => {
+    console.log("H",req)
     res.json(req.user);
   });
 app.listen(port, () => {

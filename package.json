@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prestart": "nodemon setupDb.js",
     "start": "nodemon app.js"
   },
   "keywords": [],
